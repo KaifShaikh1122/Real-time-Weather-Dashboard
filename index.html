@@ -1,0 +1,27 @@
+<div class="weather-container">
+    <h1>Weather Dashboard</h1>
+    
+    <!-- Search Functionality -->
+    <div class="search-box">
+        <input type="text" id="city-input" placeholder="Enter city name...">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="spinner hidden"></div>
+
+    <!-- Dynamic Output Display -->
+    <div id="weather-display" class="weather-display hidden">
+        <h2 id="city-name">City Name</h2>
+        <!-- Weather Icon Placeholder -->
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <div class="metrics">
+            <p><strong>Temperature:</strong> <span id="temp">--</span>°C</p>
+            <p><strong>Humidity:</strong> <span id="humidity">--</span>%</p>
+            <p><strong>Wind Speed:</strong> <span id="wind">--</span> m/s</p>
+        </div>
+    </div>
+
+    <!-- Error Handling Display -->
+    <div id="error-message" class="error-message hidden"></div>
+</div>
