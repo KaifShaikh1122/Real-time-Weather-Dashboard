@@ -1,27 +1,66 @@
-<div class="weather-container">
-    <h1>Weather Dashboard</h1>
-    
-    <!-- Search Functionality -->
-    <div class="search-box">
-        <input type="text" id="city-input" placeholder="Enter city name...">
-        <button id="search-btn">Search</button>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Real-Time Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Loading Spinner -->
-    <div id="loading-spinner" class="spinner hidden"></div>
-
-    <!-- Dynamic Output Display -->
-    <div id="weather-display" class="weather-display hidden">
-        <h2 id="city-name">City Name</h2>
-        <!-- Weather Icon Placeholder -->
-        <img id="weather-icon" src="" alt="Weather Icon">
-        <div class="metrics">
-            <p><strong>Temperature:</strong> <span id="temp">--</span>°C</p>
-            <p><strong>Humidity:</strong> <span id="humidity">--</span>%</p>
-            <p><strong>Wind Speed:</strong> <span id="wind">--</span> m/s</p>
+    <div class="weather-card">
+        <h1>Weather Dashboard</h1>
+        
+        <!-- Interactive Search Engine Component -->
+        <div class="search-engine">
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Search city (e.g. Mumbai, New York)..."
+                autocomplete="off"
+            >
+            <button id="search-btn" aria-label="Search city weather">Search</button>
         </div>
+
+        <!-- System Loading Feedback Interface -->
+        <div id="loading-spinner" class="spinner-container hidden">
+            <div class="spinner-core"></div>
+            <p>Fetching real-time metrics...</p>
+        </div>
+
+        <!-- Dynamic Output Template Engine -->
+        <div id="weather-display" class="display-wrapper hidden">
+            <div class="location-header">
+                <h2 id="city-name">--</h2>
+                <div class="badge">Live Condition</div>
+            </div>
+            
+            <div class="visual-status">
+                <img id="weather-icon" src="" alt="Weather Condition Indicator">
+                <p id="weather-desc">--</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="label">Temperature</span>
+                    <span class="value"><span id="temp">--</span>°C</span>
+                </div>
+                <div class="metric-box">
+                    <span class="label">Humidity</span>
+                    <span class="value"><span id="humidity">--</span>%</span>
+                </div>
+                <div class="metric-box">
+                    <span class="label">Wind Speed</span>
+                    <span class="value"><span id="wind">--</span> m/s</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contextual Error Log Display -->
+        <div id="error-message" class="error-container hidden"></div>
     </div>
 
-    <!-- Error Handling Display -->
-    <div id="error-message" class="error-message hidden"></div>
-</div>
+    <!-- Script Injection at the baseline to confirm DOM compilation -->
+    <script src="app.js"></script>
+</body>
+</html>
